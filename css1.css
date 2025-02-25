@@ -1,0 +1,130 @@
+:root {
+    --primary-bg: #1e1e1e;
+    --secondary-bg: #252526;
+    --nav-bg: #333333;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --accent: #007acc;
+    --border: #404040;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+}
+
+.ide-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.ide-nav {
+    background-color: var(--nav-bg);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+}
+
+select, button {
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--accent);
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.editor-container {
+    flex: 2;
+    background-color: var(--primary-bg);
+    position: relative;
+}
+
+.CodeMirror {
+    height: 100% !important;
+    font-size: 14px;
+}
+
+.analysis-panel {
+    flex: 1;
+    background-color: var(--secondary-bg);
+    border-left: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.analysis-content {
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.runtime-analysis,
+.error-analysis,
+.code-explanation {
+    margin-bottom: 2rem;
+}
+
+h4 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+#runtimeMetrics,
+#errorList,
+#lineExplanations {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.error-item {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: rgba(255, 0, 0, 0.1);
+    border-left: 3px solid #ff0000;
+    border-radius: 2px;
+}
+
+.explanation-item {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: rgba(0, 122, 204, 0.1);
+    border-left: 3px solid var(--accent);
+    border-radius: 2px;
+}
